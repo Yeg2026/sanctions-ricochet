@@ -190,7 +190,7 @@ def results_page():
         c1.metric("Votes", total)
         c2.metric("Finished the game", len(scores))
         c3.metric("Average score",
-                  f"{scores.mean():.1f} / {len(QUESTIONS)}" if len(scores) else "n/a")
+                 f"{round(scores.mean(), 1):g} / {len(QUESTIONS)}"if len(scores) else "n/a")
         if total:
             tally = pd.DataFrame({
                 "Answer": ["Isolate", "Reroute"], "Votes": [iso, rer],
